@@ -1,7 +1,8 @@
 'use strict';
 
+import {api} from './script.js';
 
-class Card {
+export class Card {
   constructor(data){
     this.data = data;
     this.name = data.name;

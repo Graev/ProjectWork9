@@ -1,7 +1,13 @@
 'use strict';
 
+import {Card} from './Card.js';
+// import {cardContainer} from './script.js';
+import {CardList} from './CardList.js';
+import {formPopup, avatarPopup, addPopuop} from './script.js';
+
+
 //работа с api
-class Api {
+export class Api {
     constructor(options){
       this.options = options;
     }
@@ -110,5 +116,5 @@ function statusRequest(res) {
 }
 
 
-// let cardContainer = '';
+export let cardContainer = '';
 

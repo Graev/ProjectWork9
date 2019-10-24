@@ -1,7 +1,8 @@
 'use strict';
 
+import {Card} from './Card.js'
 //контейнер карточек
-class CardList{
+export class CardList{
     constructor (domContainer, cardArray) {
       this.domContainer = domContainer;
       this.cardArray = cardArray;

@@ -1,8 +1,9 @@
 'use strict';
 
+import {api} from './script.js';
 
 //работа с Popup
-class Popup {
+export class Popup {
     constructor(popupElement, openButton){
       this.popupElement = popupElement;
       this.open = this.open.bind(this);
@@ -20,7 +21,7 @@ class Popup {
     }
   }
   
-  class ChangeNamePopup extends Popup {
+  export class ChangeNamePopup extends Popup {
     constructor(popupElement, openButton){
       super(popupElement, openButton);
       this.submit = this.submit.bind(this);
@@ -47,7 +48,7 @@ class Popup {
     }
   }
   
-  class AddCardPopup extends Popup{
+  export class AddCardPopup extends Popup{
     constructor(popupElement, openButton){
       super(popupElement, openButton);
       this.submit = this.submit.bind(this);
@@ -63,7 +64,7 @@ class Popup {
     
   }
   
-  class ChangeAvatarPopup extends Popup {
+  export class ChangeAvatarPopup extends Popup {
     constructor(popupElement, openButton){
       super(popupElement, openButton);
       this.submit = this.submit.bind(this);
