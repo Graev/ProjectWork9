@@ -1,10 +1,11 @@
 'use strict';
 
 import "../pages/index.css"
-import {Api} from  './Api.js';
+
+import {CardList} from './CardList.js';
 import {ChangeNamePopup, AddCardPopup, ChangeAvatarPopup} from './Popup.js';
 
-const serverUrl = process.env.NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3';
+// const serverUrl = NODE_ENV === 'development' ? 'http://praktikum.tk/cohort3' : 'https://praktikum.tk/cohort3';
 
 /*валидацию вынес в отдельную функцию, что бы не вешать проверку каждый раз при открытии popup, 
 если поля будут развиваться, можно будет сделать частью классов, наверное
@@ -37,27 +38,13 @@ function validity(event){
   }else {
     event.target.parentElement.querySelector('.button').setAttribute('disabled', true);
   }
-    }
+}
 
-//вызов конструкторов
-export const api = new Api({
-  baseUrl: serverUrl,
-  header:{
-    headers: {
-      authorization: '4cdd9b84-dfe4-4ccc-942e-84e8ca2336ab',
-      'Content-Type': 'application/json'
-    }
-  }
-})
-export let cardContainer = '';
-export const formPopup = new ChangeNamePopup(document.querySelector('.edit-popup'), document.querySelector('.user-info__edit-button'));
-export const addPopuop = new AddCardPopup(document.querySelector('.add-popup'), document.querySelector('.user-info__button'));
-export const avatarPopup = new ChangeAvatarPopup(document.querySelector('.avatar-popup'), document.querySelector('.user-info__photo'));
 const photoPopup = document.querySelector('.photo-popup');
 
 
-api.getUserData();
-api.getCards();
+// api.getUserData();
+
 
 photoPopup.querySelector('.popup__close').addEventListener('click', () => {
   photoPopup.classList.remove('popup_is-opened');
@@ -65,6 +52,10 @@ photoPopup.querySelector('.popup__close').addEventListener('click', () => {
 })
 
 document.querySelector('.root').addEventListener('input', validity);
+
+
+export const addPopuop = new AddCardPopup(document.querySelector('.add-popup'), document.querySelector('.user-info__button'));
+export const avatarPopup = new ChangeAvatarPopup(document.querySelector('.avatar-popup'), document.querySelector('.user-info__photo'));
 
 
 

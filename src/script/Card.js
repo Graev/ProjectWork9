@@ -1,13 +1,14 @@
 'use strict';
 
-import {api} from './script.js';
+import {api} from './Api.js';
+import {formPopup} from './Popup.js';
 
 export class Card {
   constructor(data){
     this.data = data;
     this.name = data.name;
     this.link = data.link;
-    this.myId = 'c1f635ecaccb61eaa3e06ae0'
+    this.myId = String(formPopup.myId);
     this.likeCount = data.likes.length;
     this.like = this.like.bind(this);
     this.remove = this.remove.bind(this);
@@ -61,11 +62,13 @@ export class Card {
   like(event){
     if (event.target.classList.contains('place-card__like-icon_liked')){
       api.editLikeCount(this.data._id, 'DELETE' , event.target).then((data)=>{
-        this.card.querySelector('.place-card__like-count').textContent = data;
+        this.card.querySelector('.place-card__like-icon').classList.toggle('place-card__like-icon_liked');
+        this.card.querySelector('.place-card__like-count').textContent = data.likes.length;
       });
     }else {
       api.editLikeCount(this.data._id, 'PUT', event.target).then((data)=>{
-        this.card.querySelector('.place-card__like-count').textContent = data;
+        this.card.querySelector('.place-card__like-icon').classList.toggle('place-card__like-icon_liked');
+        this.card.querySelector('.place-card__like-count').textContent = data.likes.length;
       });
     }
   }
