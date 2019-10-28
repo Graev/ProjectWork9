@@ -3,6 +3,11 @@
 
  Ссылка на проект: https://github.com/Graev/ProjectWork9
 
+Виды сборок:
+1) "build": "NODE_ENV=production rimraf dist && webpack --mode production" собирает с помощью webpack итоговый проект в папку dist, пропуская его через интерпретаторы
+2) "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch" запускает локальный сервер с собраным проектом
+3) "deploy": "NODE_ENV=production gh-pages -d dist" публикует собранный в папке dist проект
+
  Для сборки проекта использовались:
  "babel-polyfill": "^6.26.0",
  "core-js": "^3.1.4",
