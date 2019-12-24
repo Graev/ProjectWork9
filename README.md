@@ -3,7 +3,7 @@
 
  Ссылка на проект: https://graev.github.io/ProjectWork9/src
 
-Для работы сайта необходимо развернуть локальный сервер (https://github.com/Graev/Project-on-Express)
+Для работы сайта необходимо развернуть локальный сервер: https://github.com/Graev/Project-on-Express
 
 Виды сборок:
 1) "build": "NODE_ENV=production rimraf dist && webpack --mode production" собирает с помощью webpack итоговый проект в папку dist, пропуская его через интерпретаторы
