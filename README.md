@@ -1,7 +1,7 @@
 # ProjectWork9
  Моя проектная работа №9 из Я.Практикум, версия 0.0.1
 
- Ссылка на проект: https://github.com/Graev/ProjectWork9
+ Ссылка на проект: https://graev.github.io/ProjectWork9/src
 
 Виды сборок:
 1) "build": "NODE_ENV=production rimraf dist && webpack --mode production" собирает с помощью webpack итоговый проект в папку dist, пропуская его через интерпретаторы
